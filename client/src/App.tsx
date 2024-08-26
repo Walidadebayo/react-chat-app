@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     api.get("/api/data").then((res) => {
+      console.log(res.data);
       setData(res.data);
     });
   }, []);
@@ -29,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Chats />} />
             <Route path="/signin" element={<LoginRegister />} />
-            <Route path="/data" element={<div>{data?.message}</div>} />
+            <Route path="/data" element={<div><h1>{data?.message}</h1></div>} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </LoadingProvider>

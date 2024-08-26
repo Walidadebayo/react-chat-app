@@ -7,10 +7,10 @@ import cookieParser from 'cookie-parser';
 import userRoute from './routes/userRoute';
 import messageRoute from './routes/messageRoute';
 
-const corsConfig = {
-    origin: process.env.BASE_URL || 'http://localhost:5173/',
-    credentials: true
-};
+// const corsConfig = {
+//     origin: process.env.BASE_URL || 'http://localhost:5173',
+//     credentials: true
+// };
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ const app = express();
 const port: string | number = process.env.PORT || 5500;
 
 app.use(cookieParser());
-app.use(cors(corsConfig));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -35,12 +35,12 @@ const uri: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/react'
 })();
 
 
+app.get('/api/data', (req: express.Request, res: express.Response) => {
+    res.json({ message: 'Hello from server!' });
+});
 app.use('/', userRoute);
 app.use('/api', messageRoute);
 
-app.get('/messages', (req: express.Request, res: express.Response) => {
-    res.json({ message: 'Hello from server!' });
-});
 
 
 
