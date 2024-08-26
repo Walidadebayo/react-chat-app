@@ -18,7 +18,6 @@ function App() {
 
   useEffect(() => {
     api.get("/api/data").then((res) => {
-      console.log(res.data);
       setData(res.data);
     });
   }, []);
