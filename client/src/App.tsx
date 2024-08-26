@@ -29,8 +29,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Chats />} />
             <Route path="/signin" element={<LoginRegister />} />
-            <Route path="*" element={<ErrorPage />} />
             <Route path="/data" element={<div>{data?.message}</div>} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </LoadingProvider>
       </ErrorBoundary>
