@@ -8,8 +8,8 @@
     ],
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/server/src/routes/userRoute.ts"
+            "source": "/api/user/(.*)",
+            "destination": "/server/src/routes"
         }
     ]
 }
