@@ -28,14 +28,6 @@ app.get('/api/data', (req, res) => {
     res.json({ message: 'Hello from the server!' });
 });
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../client/build'));
-    app.get('*', (req: express.Request, res: express.Response) => {
-        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-    });
-}
-
-
 app.use('/api/user', userRoute);
 app.use('/api/m', messageRoute);
 

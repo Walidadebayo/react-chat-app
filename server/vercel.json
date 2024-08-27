@@ -10,6 +10,14 @@
         {
             "src": "/(.*)",
             "dest": "/src/server.ts"
+        },
+        {
+            "src": "/api/user/(.*)",
+            "dest": "/src/routes/userRoute.ts"
+        },
+        {
+            "src": "/api/m/(.*)",
+            "dest": "/src/routes/messageRoute.ts"
         }
     ]
 }
