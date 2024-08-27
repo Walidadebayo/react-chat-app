@@ -9,13 +9,15 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
-        }
-    ],
-    "rewrites": [
+            "dest": "/server/src/routes/userRoute.ts"
+        }, 
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "src": "/(.*)",
+            "dest": "/server/src/routes/messageRoute.ts"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/server/src/server.ts"
         }
     ]
 }
