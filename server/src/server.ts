@@ -44,12 +44,12 @@ app.use('/api/m', messageRoute);
 
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req: express.Request, res: express.Response) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('client/build'));
+//     app.get('*', (req: express.Request, res: express.Response) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//     });
+// }
 var l = [
     {
         "id": "message1_id",
