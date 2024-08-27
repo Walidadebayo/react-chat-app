@@ -1,23 +1,17 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "*.ts",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/user/(.*)",
-            "dest": "/server/src/routes/userRoute.ts"
+            "sources": "/api/user/(.*)",
+            "destination": "/server/src/routes/userRoute.ts"
         },
         {
-            "src": "/api/m/(.*)",
-            "dest": "/server/src/routes/messageRoute.ts"
+            "sources": "/api/m/(.*)",
+            "destination": "/server/src/routes/messageRoute.ts"
         },
         {
-            "src": "/(.*)",
-            "dest": "/server/src/server.ts"
+            "sources": "/(.*)",
+            "destination": "/server/src/server.ts"
         }
     ]
 }
