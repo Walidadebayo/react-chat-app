@@ -1,9 +1,13 @@
 import { Router } from 'express';
 import { AddContact, DeleteUser, GetContacts, GetUserByEmail, GetUserById, GetUserByUsername, Login, Logout, Register, RemoveContact, SearchUsers, UpdatePassword, UpdateProfilePicture, UpdateUser, ValidateUser } from '../controllers/UserController';
 import { Auth } from '../middlewares/UserAuth';
+import express from 'express';
 
 const router = Router();
 
+router.get('/data', (req: express.Request, res: express.Response) => {
+    res.json({ message: 'Hello from server!' });
+});
 router.post('/auth/signup', Register);
 router.post('/auth/login', Login);
 router.post('/auth/logout', Logout);

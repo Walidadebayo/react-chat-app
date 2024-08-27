@@ -34,10 +34,6 @@ const uri: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/react'
     }
 })();
 
-
-app.get('/data', (req: express.Request, res: express.Response) => {
-    res.json({ message: 'Hello from server!' });
-});
 app.use('/api/user', userRoute);
 app.use('/api/m', messageRoute);
 
