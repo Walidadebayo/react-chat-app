@@ -24,6 +24,21 @@ app.use(express.urlencoded({ extended: true }));
 
 const uri: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/react';
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req: express.Request, res: express.Response) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
+
+app.get('/api/data', (req, res) => {
+    res.json({ message: 'Hello from the server!' });
+});
+
+app.use('/api/user', userRoute);
+app.use('/api/m', messageRoute);
+
+
 (async () => {
     try {
         mongoose.connect(uri).then(() => {
@@ -34,18 +49,9 @@ const uri: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/react'
     }
 })();
 
-app.use('/api/user', userRoute);
-app.use('/api/m', messageRoute);
 
 
 
-
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('client/build'));
-//     app.get('*', (req: express.Request, res: express.Response) => {
-//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//     });
-// }
 var l = [
     {
         "id": "message1_id",
