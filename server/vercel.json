@@ -2,16 +2,8 @@
     "version": 2,
     "rewrites": [
         {
-            "sources": "/api/user/(.*)",
-            "destination": "/server/src/routes/userRoute.ts"
-        },
-        {
-            "sources": "/api/m/(.*)",
-            "destination": "/server/src/routes/messageRoute.ts"
-        },
-        {
             "sources": "/(.*)",
-            "destination": "/server/src/server.ts"
+            "destination": "/"
         }
     ]
 }
