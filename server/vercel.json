@@ -19,19 +19,5 @@
             "src": "/(.*)",
             "dest": "/server/src/server.ts"
         }
-    ],
-    "rewrites": [
-        {
-            "src": "/api/user/(.*)",
-            "dest": "/server/src/routes/userRoute.ts"
-        },
-        {
-            "src": "/api/m/(.*)",
-            "dest": "/server/src/routes/messageRoute.ts"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/server/src/server.ts"
-        }
     ]
 }
