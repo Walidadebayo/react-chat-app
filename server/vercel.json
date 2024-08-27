@@ -9,7 +9,7 @@
     "rewrites": [
         {
             "source": "/api/user/(.*)",
-            "destination": "/server/src/"
+            "destination": "/src"
         }
     ]
 }
