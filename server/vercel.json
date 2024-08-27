@@ -12,11 +12,11 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/api/user/(.*)",
             "dest": "/server/src/routes/userRoute.ts"
         },
         {
-            "src": "/(.*)",
+            "src": "/api/m/(.*)",
             "dest": "/server/src/routes/messageRoute.ts"
         },
         {
